@@ -23,43 +23,25 @@ if (auto.numarkm === 15) {
 }
 // 1.2 Aduaga o proprietate noua, description, cu valoarea aferenta. E sansa ta sa fii creativ.
 
-let object1 = {
-    culoare: "rosu",
-    locuri: 5,
-}
+auto.descriere = "Dacia Duster este o familie de automobile produse și comercializate în comun de producătorul francez Renault și filiala sa din România Dacia din 2010.";
+console.log (auto);
 
-let object2 = {
-    culoare: "verde",
-    
-}
-
-if (object1 === object2) {
-    console.log ("Culoarea este rosu");
-
-} else {
-    console.log ("Culoarea este verde");
-}
-const obj = Object.assign (object1, object2);
-
-console.log(obj);
-console.log(object1);
-console.log(object2);
 // 1.3 Sterge descrierea din obiect.
-delete object2.culoare;
-console.log(object2.culoare);
+delete auto.descriere;
+console.log(auto.descriere);
 
 // 2. Fa o functie, numita tuneCar, care primeste ca parametru un obiect, reprezentand o masina. Functia returneaza un obiect nou, fara a il modifica pe cel primit ca parametru. Obiectul returnat de functie are de doua ori mai putini km, iar pretul este cu 50% mai mare. La apelul functiei, paseaza ca valoare pentru parametru obiectul creat mai sus.
 
-const tuneCar = (car) => {
-    let car2 = Object.assign({}, car);
-    car2.km /= 2;
-    car2.pret *= 1.5;
-    return car2;
-  };
-  
-  console.log(tuneCar(auto));
-  console.log(auto);
+function tuneCar(car) {
+    let newCar = Object.assign ({}, auto);
+    newCar.numarkm = newCar.numarkm/2;
+    newCar.pret = newCar.pret + newCar.pret/2;
+    return newCar
+}
 
+console.log (tuneCar(auto));
+
+  
 // 3. Folosind metodele existente pe obiectul Date, afiseaza consola ora curenta, sub urmatorul format: HH:MM:SS (ex: 21:07:34).
 
 
